@@ -204,7 +204,7 @@ gseaplot2 <- function(x, geneSetID, title = "", color="green", base_size = 11,
               panel.grid.minor = element_line(colour = "grey92"),
               panel.grid.major.y = element_blank(),
               panel.grid.minor.y = element_blank()) +
-        scale_x_continuous(expand=c(0,0))
+        scale_x_continuous(expand=c(0,0), labels = comma)
 
     if (ES_geom == "line") {
         es_layer <- geom_line(aes_(y = ~runningScore, color= ~Description),
@@ -239,7 +239,7 @@ gseaplot2 <- function(x, geneSetID, title = "", color="green", base_size = 11,
               axis.ticks = element_blank(),
               axis.text = element_blank(),
               axis.line.x = element_blank()) +
-        scale_x_continuous(expand=c(0,0)) +
+        scale_x_continuous(expand=c(0,0), labels = comma) +
         scale_y_continuous(expand=c(0,0))
 
     if (length(geneSetID) == 1) {
